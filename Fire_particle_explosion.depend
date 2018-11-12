@@ -348,3 +348,20 @@
 	"begin_code.h"
 	"close_code.h"
 
+1542049567 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\main.cpp
+	<iostream>
+	<string.h>
+	<SDL.h>
+	"screen.h"
+
+1542049515 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.cpp
+	"screen.h"
+	<string.h>
+
+1542050018 c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.h
+	<SDL.h>
+
+1542047499 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\bit shifting.cpp
+	<iostream>
+	<iomanip>
+
