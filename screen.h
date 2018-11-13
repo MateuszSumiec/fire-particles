@@ -23,6 +23,7 @@ public:
     bool checkForTextureError();
     bool init();
     void update();
+    void clear();
     bool procesEvents();
     void setPixel(int x, int y, Uint32 red, Uint32 green, Uint32 blue);
     void close();
