@@ -348,20 +348,43 @@
 	"begin_code.h"
 	"close_code.h"
 
-1542049567 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\main.cpp
+1542125520 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\main.cpp
 	<iostream>
 	<string.h>
+	<math.h>
+	<stdlib.h>
+	<time.h>
 	<SDL.h>
 	"screen.h"
+	"swarm.h"
 
-1542049515 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.cpp
+1542125513 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.cpp
 	"screen.h"
 	<string.h>
 
-1542050018 c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.h
+1542125415 c:\users\mateusz\desktop\c++\fire_particle_explosion\screen.h
 	<SDL.h>
 
 1542047499 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\bit shifting.cpp
 	<iostream>
 	<iomanip>
+
+1542066841 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\particles.cpp
+	"particles.h"
+	<stdlib.h>
+
+1542067008 c:\users\mateusz\desktop\c++\fire_particle_explosion\particles.h
+
+1542125503 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\swarm.cpp
+	"swarm.h"
+
+1542127057 c:\users\mateusz\desktop\c++\fire_particle_explosion\swarm.h
+	"particle.h"
+
+1542127026 source:c:\users\mateusz\desktop\c++\fire_particle_explosion\particle.cpp
+	"particle.h"
+	<stdlib.h>
+
+1542126960 c:\users\mateusz\desktop\c++\fire_particle_explosion\particle.h
+	<stdlib.h>
 

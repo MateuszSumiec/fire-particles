@@ -3,27 +3,22 @@
 
 namespace srn{
 
-Screen::Screen():
-    m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
+Screen::Screen(): m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
 }
 
 
 bool Screen::init(){
     checkForInitError();
 
-    m_window = SDL_CreateWindow("Particle Fire Explosion",
-                        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-
+    m_window = SDL_CreateWindow("Particle Fire Explosion", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     checkForWindowError();
 
     m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_PRESENTVSYNC);
     m_texture = SDL_CreateTexture(m_renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STATIC, SCREEN_WIDTH, SCREEN_HEIGHT);
-
     checkForRendererError();
     checkForTextureError();
 
     m_buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
-
     memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
     return true;
@@ -34,6 +29,8 @@ bool Screen::checkForInitError(){
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 ){
         return false;
     }
+    else
+        return true;
 }
 
 
@@ -42,6 +39,8 @@ bool Screen::checkForWindowError(){
         SDL_Quit();
         return false;
     }
+    else
+        return true;
 }
 
 
@@ -51,6 +50,8 @@ bool Screen::checkForRendererError(){
         SDL_Quit();
         return false;
     }
+    else
+        return true;
 }
 
 
@@ -61,6 +62,8 @@ bool Screen::checkForTextureError(){
             SDL_Quit();
             return false;
         }
+    else
+        return true;
 }
 
 
@@ -71,7 +74,15 @@ void Screen::update(){
     SDL_RenderPresent(m_renderer);
 }
 
+void Screen::clear(){
+    memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+}
+
 void Screen::setPixel(int x, int y, Uint32 red, Uint32 green, Uint32 blue){
+    if(x<0 || x>=SCREEN_WIDTH || y<0 || y>=SCREEN_HEIGHT){
+        return;
+    }
+
     Uint32 color = 0;
 
     color += red;
