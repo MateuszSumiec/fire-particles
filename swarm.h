@@ -8,12 +8,12 @@ namespace srn{
 class Swarm{
 private:
     Particle * m_particle;
-
+    int lastTime;
 public:
-    const static int N_PARTICLES = 4000;
+    const static int N_PARTICLES = 5000;
     Swarm();
     virtual ~Swarm();
-    void update();
+    void update(int elapsed);
     const Particle * const getParticles() { return m_particle; };
 };
 

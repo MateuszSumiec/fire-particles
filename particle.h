@@ -1,21 +1,25 @@
 #ifndef PARTICLES_H
 #define PARTICLES_H
+#include <math.h>
 
-#include <stdlib.h>
 namespace srn{
 
 class Particle{
+private:
+    double m_direction;
+    double m_speed;
+
+    void init();
+
 public:
     double m_x;
     double m_y;
-    double m_xspeed;
-    double m_yspeed;
 
     Particle();
     ~Particle();
-    void update();
-    void xOutOfBoundsReverseDirection();
-    void yOutOfBoundsReverseDirection();
+    void update(int interval);
+    void outOfBoundsSetParticleAtBeginning();
+    void randomInitialisationOfParticles();
 };
 
 }//namespace srn
